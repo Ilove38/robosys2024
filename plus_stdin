@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+# SPDX-FileCopyrightText: 2024 Nishi Takuma
+
 import sys
-   
-ans = 0.0
+    ans = 0.0
 for line in sys.stdin:
     try:
         ans += float(line)    #intは文字列を整数に（失敗すると例外発生）
