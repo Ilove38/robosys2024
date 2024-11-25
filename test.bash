@@ -12,7 +12,7 @@ res=0
 
 # テスト1
 out=$(seq 5 | ./plus)
-[ "${out}" = 15 ] || ng "$LINENO"
+[ "$(printf "%.0f" "$out")" = 15 ] || ng "$LINENO"
 
 # STRANGE INPUT: 計算できない値を入力してみる
 out=$(echo あ | ./plus)           
