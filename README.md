@@ -19,7 +19,9 @@
 
 以下の手順でプロジェクトをローカル環境にインストールしてください。
 
+、、、
 git clone https://github.com/Ilove38/robosys2024
+、、、
 
 依存関係をインストール
 
@@ -27,13 +29,17 @@ git clone https://github.com/Ilove38/robosys2024
 ## 使い方
  1.ディレクトリに移動します。
 
+、、、
 　cd tmp
 
 　cd robosys2024
+、、、
  
  2.以下のコマンドを実行します。
 
+、、、
 　 ./unit_request.py
+、、、
 
  3.標準入力に任意の文字列を入力し、Enterキーを押します。
 
@@ -41,7 +47,7 @@ git clone https://github.com/Ilove38/robosys2024
 
 
 
-　使用例：
+## 使用例：
 
   入力: こんにちは
 
