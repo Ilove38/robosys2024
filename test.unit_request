@@ -1,0 +1,49 @@
+#!/bin/bash -xv
+# SPDX-FileCopyrightText: 2024 Nishi Takuma
+# SPDX-License-Identifier: BSD-3-Clause
+
+# 関数定義
+ng () {
+    echo "${1}行目が違うよ"
+    res=1
+}
+
+res=0
+
+# テスト1: 正常入力 (単語がカウントされるか)
+out=$(echo "こんにちは" | ./unit_request.py)
+out=$(echo "$out" | sed '/標準入力を待っています。終了するにはCtrl+Dを押してください。/d') # メッセージを削除
+[ "$?" = 0 ] || ng "$LINENO"
+expected_output="「単位をください」 「単位をください」 「単位をください」 「単位をください」 「単位をください」"
+[ "${out}" = "${expected_output}" ] || ng "$LINENO"
+
+# テスト2: 異常入力 (記号のみ)
+out=$(echo "!@#$%" | ./unit_request.py)
+out=$(echo "$out" | sed '/標準入力を待っています。終了するにはCtrl+Dを押してください。/d') # メッセージを削除
+[ "$?" = 0 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
+# テスト3: 異常入力 (空白のみ)
+out=$(echo "     " | ./unit_request.py)
+out=$(echo "$out" | sed '/標準入力を待っています。終了するにはCtrl+Dを押してください。/d') # メッセージを削除
+[ "$?" = 0 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
+# テスト4: 異常入力 (何も入力しない)
+out=$(echo "" | ./unit_request.py)
+out=$(echo "$out" | sed '/標準入力を待っています。終了するにはCtrl+Dを押してください。/d') # メッセージを削除
+[ "$?" = 0 ] || ng "$LINENO"
+[ "${out}" = "" ] || ng "$LINENO"
+
+# テスト5: 英数字混合の入力
+out=$(echo "123nonono" | ./unit_request.py)
+out=$(echo "$out" | sed '/標準入力を待っています。終了するにはCtrl+Dを押してください。/d') # メッセージを削除
+[ "$?" = 0 ] || ng "$LINENO"
+expected_output="「単位をください」 「単位をください」 「単位をください」 「単位をください」 「単位をください」 「単位をください」 「単位をください」 「単位をください」 「単位をください」"
+[ "${out}" = "${expected_output}" ] || ng "$LINENO"
+
+# 結果を判定
+[ "$res" = 0 ] && echo OK
+exit $res
+
+
