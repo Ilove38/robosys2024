@@ -9,20 +9,24 @@
  3. 記号、空白、改行などはカウントの対象外です。
 
 - 使用例
-  - 入力: こんにちは
+  - 入力: こんにちは(５文字)
 
     出力: 「単位をください」 「単位をください」 「単位をください」 「単位をください」 「単位をください」
+　　　　　(「単位をください」を５回出力)
 
 
-  - 入力: 123nonono
+  - 入力: 123nonono(９文字)
 
     出力: 「単位をください」 「単位をください」 「単位をください」 「単位をください」 「単位をください」 「単位をください」 「単位をください」 「単位をください」 「単位をください」
+　　　　　(「単位をください」を９回出力)
 
 ## 動作環境
 
-- OS:Ubuntu
+- OS:Ubuntu 24.04.1 LTS
 
-- Pythonバージョン:3.7~3.9
+- Pythonバージョン 3.12.3
+
+(以上のバージョンでは動作確認済み)
 
 ## インストール方法
 
@@ -45,7 +49,7 @@ git clone https://github.com/Ilove38/robosys2024
  2. 以下のコマンドを実行します。
 
 ```
-　 ./unit_request.py
+　echo AAAA | ./unit_request.py
 ```
 
  3. 標準入力に任意の文字列を入力し、Enterキーを押します。
@@ -58,7 +62,7 @@ git clone https://github.com/Ilove38/robosys2024
 ## ライセンス
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
 
-- このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
+- このパッケージのコードの一部は，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
     - [ryuichiueda/my_slides robosys_2024/lesson5.md](https://github.com/ryuichiueda/my_slides/blob/master/robosys_2024/lesson5.md)
 2024 Takuma Nishi
 
