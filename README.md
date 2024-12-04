@@ -1,4 +1,5 @@
 # robosys2024
+[![test](https://github.com/Ilove38/robosys2024/actions/workflows/test.yml/badge.svg)](https://github.com/Ilove38/robosys2024/actions/workflows/test.yml)
 "tannikudasai"というプログラムは使用者の入力を読み込み、その文字数に応じて「単位をください」と返信します。
 
 ## 概要
