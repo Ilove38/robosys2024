@@ -1,8 +1,9 @@
 # robosys2024
 [![test](https://github.com/Ilove38/robosys2024/actions/workflows/test.yml/badge.svg)](https://github.com/Ilove38/robosys2024/actions/workflows/test.yml)  
+## 概要
 "tannikudasai"というプログラムは使用者の入力を読み込み、その文字数に応じて「単位をください」と返信します。
 
-## 概要
+## 仕様
  "tannikudasai"は標準入出力を利用したプログラムです。
  このプログラムは標準入力を受け取り、以下の処理を行います。
  1. 入力された文字列中の「数字」、「アルファベット」、「日本語（全角・半角を含む）」の文字をカウントします。
