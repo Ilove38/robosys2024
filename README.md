@@ -51,7 +51,7 @@ git clone https://github.com/Ilove38/robosys2024
  2. 以下のコマンドを実行します。
 
 ```
-　echo AAAA | ./unit_request.py
+　echo AAAA | ./tannikudasai
 ```
 
  3. 標準入力に任意の文字列を入力し、Enterキーを押します。
@@ -60,6 +60,10 @@ git clone https://github.com/Ilove38/robosys2024
                                                            
 ## 注意事項
 - 記号や空白、改行はカウントの対象外です。
+  入力例　echo ,.,. | ./tannikudasai
+  出力例　"何も表示されない"
+　入力例  echo ,.Ab | ./tannikudasai
+  出力例　「単位ください」「単位ください」　"Abの部分のみがカウントされる"
 
 ## ライセンス
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
